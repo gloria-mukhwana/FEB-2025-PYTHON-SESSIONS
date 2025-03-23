@@ -1,0 +1,31 @@
+my_list = []
+print(my_list)
+
+#append
+my_list.append(10)
+my_list.append(20)
+my_list.append(30)
+my_list.append(40)
+print('list after append: ', my_list )
+
+#insert
+my_list.insert(1,15)
+print('list after insert: ', my_list )
+
+#extend
+another_list = [50, 60, 70]
+print('the other list: ', another_list)
+my_list.extend(another_list)
+print('extended list: ', my_list)
+
+#remove
+my_list.remove(70)
+print('list after removing 70: ', my_list )
+
+#sort
+my_list.sort()
+print('list in ascending order: ', my_list )
+
+#index
+value = my_list.index(30)
+print('the index of 30 is: ', value)
