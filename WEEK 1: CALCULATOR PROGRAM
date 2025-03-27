@@ -1,1 +1,26 @@
+#1. add
+#2. sub
+#3. div
+#4. mult
 
+print('choose operation')
+print('1. add')
+print('2. subtract')
+print('3. divide')
+print('4. multiply')
+
+operation = input()
+num1 = input('first number: ')
+num2 = input('second number: ')
+
+if operation == '1':
+    print('sum is: ' + str(int(num1) + int(num2)))
+elif operation == '2':
+    print('difference is: ' + str(int(num1) - int(num2)))
+elif operation == '3':
+    print('quotient is: ' + str(int(num1) / int(num2)))
+elif operation == '4':
+    print('product is: ' + str(int(num1) * int(num2)))
+else :
+    print('invalid entry')
+ 
