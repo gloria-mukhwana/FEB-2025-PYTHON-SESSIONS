@@ -1,0 +1,14 @@
+# price = 200
+# discount_percent = 5
+
+operator = input
+price = int(input('price: '))
+discount_percent = int(input('discount_percent: '))
+
+discount_amount = (discount_percent / 100) * price
+final_price = price - discount_amount
+
+if discount_percent >= 20:
+    print('final_price: ', final_price)
+else:
+    print('final price: ', price)
