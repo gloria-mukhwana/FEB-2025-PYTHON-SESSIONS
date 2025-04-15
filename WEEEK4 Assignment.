@@ -1,0 +1,49 @@
+        --1
+def modify_file(input_file, output_file):
+    try:
+
+        with open('WEEK4/input.txt', 'r') as infile:
+            content = infile.readlines()
+
+        modified_content = [line.upper() for line in content]
+
+        with open('WEEK4/output.txt', 'w') as outfile:
+            outfile.writelines(modified_content)
+
+        print(f"Modified content has been written to 'WEEK4/output.txt'")
+
+    except FileNotFoundError:
+        print(f"Error: The file 'WEEK4/input.txt' does not exist.")
+
+
+input_file_path = "input.txt"  
+output_file_path = "output.txt" 
+
+modify_file('WEEK4/input.txt', 'WEEK4/output.txt')
+
+
+        --2
+def ask_for_filename():
+    while True:
+        filename = input("Please enter the name of the file you wish to read : ")
+        
+        try:
+            with open(filename, 'r') as file:
+                print("File opened successfully.")
+
+                print(file.readline())
+                break  
+        except FileNotFoundError:
+            print(f"Error: The file '{filename}' does not exist.")
+        except PermissionError:
+            print(f"Error: You do not have permission to read the file '{filename}'.")
+        except IsADirectoryError:
+            print(f"Error: '{filename}' is a directory, not a file.")
+        except UnicodeDecodeError:
+            print("Error: The file content cannot be decoded. Please ensure the file encoding matches the system's default or specify the correct encoding.")
+        except IOException as e:
+            print(f"Error: An unexpected error occurred: {e}")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+
+ask_for_filename()
