@@ -1,0 +1,79 @@
+                #ACTIVITY 1
+class ElectronicDevice:
+    def __init__(self, brand, model, cost):
+        self._brand = brand
+        self._model = model
+        self._cost = cost
+
+    @property
+    def brand(self):
+        return self._brand
+
+    @property
+    def model(self):
+        return self._model
+
+    @property
+    def cost(self):
+        return self._cost
+
+    def get_device_details(self):
+        return f"Device details: Brand={self._brand}, Model={self._model}, Cost={self._cost}"
+
+class Phone(ElectronicDevice):
+    def __init__(self, brand, model, price):
+        super().__init__(brand, model, price)
+
+    def calculate_total_cost(self, tax_rate=0.1):
+        total_cost = self._cost * (1 + tax_rate)
+        return total_cost, f"Total cost including {tax_rate*100:.2f}% tax: {total_cost}"
+
+brand = 'Samsung'
+model = 'Galaxy'
+price = 100000
+
+phone = Phone(brand, model, price)
+
+print(phone.get_device_details())  
+
+tax_rate = 0.1
+total_cost, cost_message = phone.calculate_total_cost(tax_rate)
+print(f"Total cost including {tax_rate*100:.2f}% tax: {total_cost}")
+print(cost_message)
+
+
+
+
+                #ACTIVITY 2
+from abc import ABC, abstractmethod
+
+class AbstractVehicle(ABC):
+    @abstractmethod
+    def move(self):
+        pass
+
+class Car(AbstractVehicle):
+    def move(self):
+        print("Driving ")
+
+class Plane(AbstractVehicle):
+    def move(self):
+        print("Flying ")
+
+class Train(AbstractVehicle):
+    def move(self):
+        print("Chugging along ")
+
+class Ferry(AbstractVehicle):
+    def move(self):
+        print("Sailing smoothly ")
+
+my_car = Car()
+my_plane = Plane()
+my_train = Train()
+my_ferry = Ferry()
+
+my_car.move()  
+my_plane.move() 
+my_train.move()  
+my_ferry.move()
